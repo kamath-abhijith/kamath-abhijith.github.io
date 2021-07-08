@@ -11,27 +11,27 @@
 title: Abijith J. Kamath 
 email: abijithj@iisc.ac.in
 description: phd student in signal processing
-baseurl: "blog"                                      # the subpath of your site, e.g. /blog
+baseurl: ""                                      # the subpath of your site, e.g. /blog
 url: ""          # the base hostname & protocol for your site, e.g. http://example.com
-image: /assets/img/dumbarton.png               # used to generate site link preview
+image: /assets/img/avatar.jpg               # used to generate site link preview
 image_alt: A minimalistic jekyll theme for academic    # image description
 
 # =======================================#
 # -----------SITE SETTINGS---------------#
 #========================================#: 
-author: John Doe 
-profile_image: /assets/img/avatar/cropped.png #/assets/img/avatar/avatar.jpeg 
+author: Abijith Kamath
+profile_image: /assets/img/avatar/avatar.jpg #/assets/img/avatar/avatar.jpeg 
 occupation: 
 snippet:
-twitter: tbutler0x90
-github: tcbutler320
-linkedin: tyler-b-a700a1aa
-stackoverflow: '12935605'
-website: https://tbutler.org
+twitter: 
+github: 
+linkedin: 
+stackoverflow: 
+website: https://kamath-abhijith.github.io
 codepen: 
 medium: 
-email: developer.tbutler@gmail.com
-keybase: tbutler320
+email: abijithj@iisc.ac.in
+keybase: 
 pgp: 
 ctftime: 
 phonenumber: 
