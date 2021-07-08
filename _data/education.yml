@@ -1,6 +1,13 @@
-- School: Princeton
-  Degree: 
-  Program: School of Public and International Affairs
-  Start Date: 
+- School: Indian Institute of Science
+  Degree: PhD
+  Program: Department of Electrical Engineering
+  Start Date: 2020
   End Date: 
-  Icon: /assets/img/icons/2x/princeton-crop.png      # Make this icon small, think 30px/30px
+  Icon: /assets/img/icons/2x/iisc-seal.png
+
+- School: National Institute of Technology Karnataka
+  Degree: Bachelors of Technology
+  Program: Department of Electrical and Electronics Engineering
+  Start Date: 2015
+  End Date: 2019
+  Icon: /assets/img/icons/2x/nitk-seal.png
