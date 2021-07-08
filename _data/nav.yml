@@ -10,8 +10,8 @@ links:
 # - title: Teaching
 #   url: teaching.html
 
-- title: Blog
-  url: blog.html
+# - title: Blog
+#   url: blog.html
 
 - title: Vitae
   url: /assets/pdf/vitae.pdf
