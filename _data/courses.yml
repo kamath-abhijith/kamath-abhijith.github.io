@@ -1,17 +1,55 @@
-- Course: POL 554 International Security Studies
-  Program: School of Public and International Affairs  
-  School: Harvard
-  id: POL554
-  description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+- Course: E0 230 Computational Methods of Optimisation
+  Program:   
+  School: Indian Institute of Science
+  id: E0 230
+  description:
   link: https://example.com
 
-- Course: POL 585 International Political Economy
-  Program: School of Public and International Affairs
-  School: Harvard
-  id: POL585
-  description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
+- Course: E0 265 Convex Optimisation and Applications
+  Program:   
+  School: Indian Institute of Science
+  id: E0 265
+  description:
+  link: https://example.com
+
+- Course: E1 213 Pattern Recognition and Neural Networks
+  Program:   
+  School: Indian Institute of Science
+  id: E1 213
+  description:
+  link: https://example.com
+
+- Course: E1 222 Stochastic Models and Applications
+  Program:   
+  School: Indian Institute of Science
+  id: E1 222
+  description:
+  link: https://example.com
+
+- Course: E1 244 Detection and Estimation Theory
+  Program:   
+  School: Indian Institute of Science
+  id: E1 244
+  description:
+  link: https://example.com
+
+- Course: E2 212 Matrix Theory
+  Program:   
+  School: Indian Institute of Science
+  id: E2 212
+  description:
+  link: https://example.com
+
+- Course: E9 213 Time-Frequency Analysis
+  Program:   
+  School: Indian Institute of Science
+  id: E9 213
+  description:
+  link: https://example.com
+
+- Course: E9 241 Digital Image Processing
+  Program:   
+  School: Indian Institute of Science
+  id: E9 241
+  description:
   link: https://example.com
