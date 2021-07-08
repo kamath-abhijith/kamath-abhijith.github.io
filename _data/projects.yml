@@ -1,47 +1,39 @@
-- name: Project 1
-  id: project1
-  description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  date: true
-  link: https://example.com
-  image:  http://placehold.it/100x100
-  tech: 
-    - python
-
-
-- name: Project 2
-  id: project2
-  description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
-  date: true
-  link: https://example.com
-  image: http://placehold.it/100x100
-  tech: 
-    - c++
-
-- name: Project 3
-  id: project3
-  description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
-  date: true
-  link: https://example.com
-  image:  http://placehold.it/100x100
-  tech: 
-    - Java
-    - Maven
-    - Jenkins
-
-- name: Project 4
+- name: Image Super-Resolution using Sparsity Priors
   id: project4
   description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 0
+    Image super-resolution or zooming is simply increasing image dimensions without loss of perceptual quality. This project contains image super-resolution using sparsity priors.
   date: true
-  link: https://example.com
+  link: https://github.com/kamath-abhijith/ScSR
   image: http://placehold.it/100x100
   tech: 
-    - Sonarcube
-    - Java
+    - image processing
+
+- name: Vehicle Detection and Tracking for Automated Driving Test
+  id: project1
+  description: >
+    This project contains vehicle detection using CDR/CFAR methods and vehicle tracking using Kalman filter, for automation of driving test.
+  date: true
+  link: https://github.com/kamath-abhijith/Vehicle_Tracking
+  image: http://placehold.it/100x100
+  tech: 
+    - estimation, detection
+
+- name: Target Localisation using Time Difference of Arrival
+  id: project2
+  description: >
+    Time difference of arrival (TDOA) is an estimation method for target localisation. The project contains maximum likelihood estimation, best linear estimation and Cramer-Rao bounds.
+  date: true
+  link: https://github.com/kamath-abhijith/TDOA_Localisation
+  image: http://placehold.it/100x100
+  tech: 
+    - estimation
+
+- name: Spectrum Sensing for Congnitive Radio
+  id: project3
+  description: >
+    Cognitive radio relies on detection of vacant spectral bands for utilisation. This project contains Neymann-Pearson detectors for spectrum sensing.
+  date: true
+  link: https://github.com/kamath-abhijith/Spectrum_Sensing
+  image: http://placehold.it/100x100
+  tech: 
+    - detection
