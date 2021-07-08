@@ -61,9 +61,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
 
 <!--  GIT TALK CDN  for comment system -->
-<!--
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
 
 
 <!-- Provides information about an author or another person -->
@@ -85,30 +84,38 @@
 <link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
 
 <meta property="fb:app_id" content="">
-<meta property="og:url" content="/about.html">
+<meta property="og:url" content="">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Get to know what I'm up too">
-<meta property="og:image" content="">
-<meta property="og:image:alt" content="">
-<meta property="og:description" content="Get to know what I'm up too">
-<meta property="og:site_name" content="About Me">
+<meta property="og:title" content="Abijith J. Kamath, phd student in signal processing">
+<meta property="og:image" content="/assets/img/avatar.jpg">
+<meta property="og:image:alt" content="A minimalistic jekyll theme for academic">
+<meta property="og:description" content="phd student in signal processing">
+<meta property="og:site_name" content="Abijith J. Kamath">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="">
+<meta property="article:author" content="Abijith Kamath">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@">
-<meta name="twitter:creator" content="@">
-<meta name="twitter:url" content="/about.html">
-<meta name="twitter:title" content="Get to know what I'm up too">
-<meta name="twitter:description" content="Get to know what I'm up too">
-<meta name="twitter:image" content="">
-<meta name="twitter:image:alt" content="">
+<meta name="twitter:site" content="@https://twitter.com/kamath_abhijith">
+<meta name="twitter:creator" content="@https://twitter.com/kamath_abhijith">
+<meta name="twitter:url" content="">
+<meta name="twitter:title" content="phd student in signal processing">
+<meta name="twitter:description" content="phd student in signal processing">
+<meta name="twitter:image" content="/assets/img/avatar.jpg">
+<meta name="twitter:image:alt" content="A minimalistic jekyll theme for academic">
 
 <!-- Used for adding in-document CSS -->
 
 
 
 <!-- JavaScript & No-JavaScript tags -->
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -120,12 +127,20 @@
     });
 </script> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', ');
+</script>
 
 <noscript>
   <!-- No JS alternative -->
 </noscript>
-  <body>
+  <body style="background-color:;">
     
 <nav class="navbar navbar-expand-lg glowing-border mb-4" style="font-family:Avenir;background-color:#000000;">
   <a class="navbar-brand" href="/index.html"><h4 style="font-family:Avenir;font-weight:600;color:#ffffff;">Abijith J. Kamath</h4></a>
@@ -144,10 +159,6 @@
               </li>
         
               <li class="nav-item">
-                  <a href="blog.html" class="nav-link" style="font-family:Avenir;color:#ffffff;">Blog</a>
-              </li>
-        
-              <li class="nav-item">
                   <a href="/assets/pdf/vitae.pdf" class="nav-link" style="font-family:Avenir;color:#ffffff;">Vitae</a>
               </li>
         
@@ -163,6 +174,16 @@
 <span style="color:#CCCCCC;">
     <i> &nbsp;&nbsp; </i>
     
+        <a class="social-link" href="https://twitter.com/https://twitter.com/kamath_abhijith">
+        <span style="color: #CCCCCC;">
+            <i class="fab fa-twitter-square fa-lg"></i></a>
+        </span>
+    
+    
+        <a href="https://github.com/https://github.com/kamath-abhijith">
+        <span style="color: #CCCCCC;">
+            <i class="fab fa-github-square fa-lg"></i></a>
+        </span>
     
     
     
@@ -177,27 +198,22 @@
   </div>
 </nav>
 
+    <div class="dumbarton-spacer-sm"></div>
     <div class="container">
-      
-      <div class="card border-0">
-          <div class="card-body">
-            <p class="card-text">
-                <h1 class="mx-auto" style="font-family:Avenir;">About Me</h1>
+      <h1 class="mx-auto" style="font-family:Avenir;">About Me</h1>
 
-<p>I am Abijith J Kamath. I am a PhD student in the Department of Electrical Engineering, Indian Institute of Science, Bangalore. I work in the areas of signal/image processing - in particular sub-Nyquist sampling theory and inverse problems.</p>
+<p>I broadly work in the areas of signal/image processing, and in particular, sub-Nyquist sampling theory and inverse problems.</p>
 
-<p>I was born on the 17th of April, in Mangalore, India. Here, I spent my schooling and university years until I got my Bachelors in Technology in Electrical and Electronics Engineering at the National Institute of Technology, Karnataka.</p>
+<p>The current areas of focus are in “sampling” signals using time-encoded measurements! This is quite nonintuitive to imagine, but they have found a lot of interesting applications in neuromorphic cameras and audio sensors. The priciple lies in defining an event, and recording a set of time instants whenever the event occurs. The signal is encoded using those time instants. As an example, the figure below shows the signal $y(t)$ “sampled” at times $t’_n$ when the event that the reference sinusoid $r(t)$ and the signal have zero difference.</p>
 
-<p>I am also interested in <em>pure mathematics</em>. I have an identity crisis - am I an electrical engineer in signal processing or a bad mathematician looking for practical applications to solve. I wish to meet Mr Nicholas Bourbaki some day to help me make my mind :P I also enjoy travelling and photography, and I am a die-hard Manchester United supporter!</p>
+<p align="center">
+  <img width="460" src="https://i.imgur.com/NQLlEXT.png" />
+</p>
 
-            </p>
-            
-              <p class="card-text"><small class="text-muted">This page was last updated at 2021-07-08 17:03.</small></p>
-            
-          </div>
-      </div>
-      
+<p>Such sampling methods are efficient in the sense of sampling energy and complexity in the number of samples obtained. Further, such sampling methods have deep mathematical foundations, whilst being practical! Even more, a lot of modern day signal processing from such measurements utilse learning based algorithms! Overall, it makes for a holistic area of research involving a lot of interesting topics, with several important applications. See my <a href="/publications.html">publications</a> for some deeper insights!</p>
+
     </div>
+    <div class="dumbarton-spacer"></div>
     <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <p class="navbar-text pull-left">© 2020 - Theme Built By Tyler Butler, See it on
@@ -208,6 +224,16 @@
 
 <span style="color: Black;">
      
+        <a class="social-link" href="https://twitter.com/https://twitter.com/kamath_abhijith">
+        <span style="color: black;">
+            <i class="fab fa-twitter-square fa-lg"></i></a>
+        </span>
+    
+    
+        <a href="https://github.com/https://github.com/kamath-abhijith">
+        <span style="color: black;">
+            <i class="fab fa-github-square fa-lg"></i></a>
+        </span>
     
     
     
@@ -228,3 +254,13 @@
 </script>
   </body>
 </html>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
