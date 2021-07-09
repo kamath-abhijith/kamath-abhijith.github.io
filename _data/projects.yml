@@ -4,7 +4,7 @@
     Image super-resolution or zooming is simply increasing image dimensions without loss of perceptual quality. This project contains image super-resolution using sparsity priors.
   date: true
   link: https://github.com/kamath-abhijith/ScSR
-  image: http://placehold.it/100x100
+  image: /assets/img/icons/1x/Super-resolution.png
   tech: 
     - image processing
 
@@ -14,7 +14,7 @@
     This project contains vehicle detection using CDR/CFAR methods and vehicle tracking using Kalman filter, for automation of driving test.
   date: true
   link: https://github.com/kamath-abhijith/Vehicle_Tracking
-  image: http://placehold.it/100x100
+  image: /assets/img/icons/1x/Sampling.png
   tech: 
     - estimation, detection
 
@@ -24,7 +24,7 @@
     Time difference of arrival (TDOA) is an estimation method for target localisation. The project contains maximum likelihood estimation, best linear estimation and Cramer-Rao bounds.
   date: true
   link: https://github.com/kamath-abhijith/TDOA_Localisation
-  image: http://placehold.it/100x100
+  image: /assets/img/icons/1x/Sampling.png
   tech: 
     - estimation
 
@@ -34,6 +34,6 @@
     Cognitive radio relies on detection of vacant spectral bands for utilisation. This project contains Neymann-Pearson detectors for spectrum sensing.
   date: true
   link: https://github.com/kamath-abhijith/Spectrum_Sensing
-  image: http://placehold.it/100x100
+  image: /assets/img/icons/1x/Sampling.png
   tech: 
     - detection
