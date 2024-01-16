@@ -1,0 +1,12 @@
+---
+layout: page
+permalink: /teaching/ai235
+title: Statistics for Data Science
+description: Undergraduate course on foundations of statistics for electrical engineering and data science
+nav: false
+---
+
+1. **Tutorial** Intro to Matplotlib and Pandas <br>
+[[Code]](https://github.com/kamath-abhijith/Statistics-for-Data-Science/blob/main/notebooks/01%20Intro.ipynb)
+
+2. **Tutorial** Plotting Distributions
