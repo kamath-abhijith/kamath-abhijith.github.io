@@ -22,5 +22,5 @@ social: false # includes social icons at the bottom of the page
     </div>
 </div>
 <div class="caption">
-    Namaste! I work in the area of computational, and in particular, neuromorphic imaging!
+    Namaste 🙏🏻 I work in the area of computational, and in particular, neuromorphic imaging!
 </div>
