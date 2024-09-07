@@ -106,12 +106,15 @@ Additional measurements are made using the neuromorphic encoder opportunisticall
 Our patented unlimited sampling hardware using simple and cost-effective components in-house {% cite kulur2024neuromorphic %}. The neuromorphic unlimited sampling scheme is such that the neuromorphic encoder can be plugged into an existing acquisition system to achieve unlimited sampling, akin to a prefilter typically used in sampling, and does not require specialised hardware such as the self-reset ADC. In hardware, we demonstrate HDR acquisition and real-time reconstruction of synthetic signals. We show that neuromorphic unlimited sampling operates at the Nyquist rate of the signal, while opportunistically recording compressed measurements. Our demonstration was presented at the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) 2024, in Seoul Korea 2024, in the Show-and-tell Demos {% cite kulur2024modulo %}. A detailed theoretical exposition is available in our paper {% cite kamath2024neuromorphic %} which was also presented at IEEE ICASSP 2024.
 {: .text-justify}
 
+{% include video.liquid path="assets/video/nus-demo.mp4" class="img-fluid rounded z-depth-1" controls=true%}
 <!-- <div class="row justify-content-sm-center">
-    <div style="text-align: center;">
-        {% include video.liquid path="https://www.youtube.com/embed/JdMvjfvdW38?si=g4B4d4JFXwwqvTs2" class="img-fluid rounded z-depth-1" controls=true %}
+    <div class="col-sm-12 mt-5 mt-md-0">
+        <div style="text-align: center;">
+            {% include video.liquid path="https://www.youtube.com/embed/JdMvjfvdW38?si=g4B4d4JFXwwqvTs2" class="img-fluid rounded z-depth-1" controls=true width="100%"%}
+        </div>
     </div>
-</div>
-<div class="caption">
+</div> -->
+<!-- <div class="caption">
     Watch our demo on YouTube!
 </div> -->
 
