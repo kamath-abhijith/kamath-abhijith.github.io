@@ -4,7 +4,7 @@ title: Neuromorphic Unlimited Sampling
 description: A plug-and-play, real time, high-dynamic range acquisition system
 img: assets/img/publication_preview/nus-cover.jpeg
 importance: 1
-category: sampling
+category: unlimited sampling
 related_publications: true
 ---
 
