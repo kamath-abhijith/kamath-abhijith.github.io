@@ -10,7 +10,7 @@ related_publications: true
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-12 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/nus/banner.jpeg" %}
+        {% include figure.liquid path="assets/img/nus/banner.png" %}
     </div>
 </div>
 
