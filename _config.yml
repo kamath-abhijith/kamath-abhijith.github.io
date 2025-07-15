@@ -222,6 +222,7 @@ plugins:
   - jekyll-minifier
   - jekyll-paginate-v2
   - jekyll/scholar
+  - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-toc
   - jekyll-twitter-plugin

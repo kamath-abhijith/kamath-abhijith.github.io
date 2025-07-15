@@ -120,3 +120,19 @@ Our patented unlimited sampling hardware using simple and cost-effective compone
 
 The hardware contributions to this project are in collaboration with Shreyas, Shreyansh, Satyapreet and Dr Thakur at [NeuRonICS, Department of Electronic Systems Engineering](https://labs.dese.iisc.ac.in/neuronics/), IISc. Bengaluru.
 {: .text-justify}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=https://spectrum-lab-iisc.github.io/blog/2024/nus/">
+    <script>
+        window.location.href = "https://spectrum-lab-iisc.github.io/blog/2024/nus/";
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="https://spectrum-lab-iisc.github.io/blog/2024/nus/">click here</a>.</p>
+</body>
+</html>
