@@ -43,7 +43,7 @@ layout: default
     <!-- News -->
     {% if page.news and site.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: black">news</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -59,7 +59,7 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: black">selected publications</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
@@ -74,3 +74,131 @@ layout: default
     {% endif %}
   </article>
 </div>
+
+<style>
+/* Enhanced About Page Styling */
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  color: var(--global-theme-color);
+  font-weight: 600;
+  border-bottom: 2px solid var(--global-theme-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 1.1rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0;
+}
+
+.profile {
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.profile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Section Headers */
+h2 {
+  color: var(--global-theme-color) !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--global-theme-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.35rem;
+}
+
+h2 i {
+  margin-right: 0.5rem;
+}
+
+/* News and Posts Styling */
+.news {
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.news:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.news .table {
+  margin-bottom: 0;
+}
+
+.news-title {
+  color: var(--global-theme-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.news-title:hover {
+  color: var(--global-text-color);
+  text-decoration: none;
+}
+
+/* Publications Styling */
+.publications {
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.publications:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Dark mode compatibility */
+html[data-theme="dark"] .profile,
+html[data-theme="dark"] .news,
+html[data-theme="dark"] .publications {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+html[data-theme="dark"] .profile:hover,
+html[data-theme="dark"] .news:hover,
+html[data-theme="dark"] .publications:hover {
+  box-shadow: 0 8px 25px rgba(255,255,255,0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .profile {
+    padding: 1.25rem;
+  }
+  
+  .news,
+  .publications {
+    padding: 1.25rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+</style>
