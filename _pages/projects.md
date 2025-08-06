@@ -5,7 +5,7 @@ permalink: /projects/
 description: 
 nav: true
 nav_order: 3
-display_categories: [unlimited sampling]
+display_categories: [unlimited sampling, inverse problems]
 horizontal: false
 ---
 
