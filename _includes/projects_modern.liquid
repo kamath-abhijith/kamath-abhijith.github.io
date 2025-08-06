@@ -1,0 +1,35 @@
+<a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="project-link">
+  <div class="project-card clickable">
+    <div class="project-header">
+      <div class="project-link-icon">
+        <i class="fas fa-external-link-alt"></i>
+      </div>
+    </div>
+    <div class="project-content">
+      {% if project.img %}
+        <div class="project-image-container">
+          <img src="{{ project.img | relative_url }}" alt="{{ project.title }} thumbnail" class="project-image">
+        </div>
+      {% endif %}
+      <h5 class="project-title">{{ project.title }}</h5>
+      <p class="project-description">{{ project.description }}</p>
+    </div>
+    <div class="project-footer">
+      {% if project.github %}
+        <div class="project-github-link">
+          <a href="{{ project.github }}" target="_blank" class="github-button">
+            <i class="fab fa-github"></i>
+            {% if project.github_stars %}
+              <span class="star-count" data-toggle="tooltip" title="GitHub Stars">
+                <i class="fas fa-star"></i>
+                <span id="{{ project.github_stars }}-stars"></span>
+              </span>
+            {% else %}
+              <span>View on GitHub</span>
+            {% endif %}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</a>

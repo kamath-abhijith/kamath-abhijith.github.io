@@ -1,5 +1,8 @@
-<ul class="card-text font-weight-light list-group list-group-flush">
+<div class="cv-clean-list">
   {% for content in entry.contents %}
-    <li class="list-group-item">{{ content }}</li>
+    <div class="cv-list-item">
+      <i class="cv-list-bullet fas fa-circle"></i>
+      <span class="cv-list-content">{{ content }}</span>
+    </div>
   {% endfor %}
-</ul>
+</div>

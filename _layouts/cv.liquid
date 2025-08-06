@@ -11,9 +11,10 @@ layout: default
             href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}"
             target="_blank"
             rel="noopener noreferrer"
-            class="float-right"
-            ><i class="fa-solid fa-file-pdf"></i
-          ></a>
+            class="cv-pdf-link"
+            title="Download PDF CV"
+            ><i class="fa-solid fa-file-pdf"></i>
+          </a>
         {% endif %}
       </h1>
       {% if page.description %}
@@ -22,12 +23,17 @@ layout: default
     </header>
 
     <article>
-      <div class="cv">
+      <div class="cv-modern">
         {% for entry in site.data.cv %}
           <a class="anchor" id="{{ entry.title }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
-            <div>
+          <div class="cv-section-card">
+            <div class="cv-section-header">
+              <h3 class="cv-section-title">
+                <i class="cv-section-icon {% if entry.title == 'General Information' %}fas fa-user{% elsif entry.title == 'Education' %}fas fa-graduation-cap{% elsif entry.title == 'Experience' %}fas fa-briefcase{% elsif entry.title == 'Publications' %}fas fa-file-alt{% elsif entry.title == 'Awards' %}fas fa-trophy{% elsif entry.title == 'Skills' %}fas fa-code{% else %}fas fa-circle{% endif %}"></i>
+                {{ entry.title }}
+              </h3>
+            </div>
+            <div class="cv-section-content">
               {% if entry.type == 'list' %}
                 {% include cv/list.liquid %}
               {% elsif entry.type == 'map' %}
@@ -57,9 +63,10 @@ layout: default
             href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}"
             target="_blank"
             rel="noopener noreferrer"
-            class="float-right"
-            ><i class="fa-solid fa-file-pdf"></i
-          ></a>
+            class="cv-pdf-link"
+            title="Download PDF CV"
+            ><i class="fa-solid fa-file-pdf"></i>
+          </a>
         {% endif %}
       </h1>
       {% if page.description %}
@@ -68,7 +75,7 @@ layout: default
     </header>
 
     <article>
-      <div class="cv">
+      <div class="cv-modern">
         {% for data in site.data.resume %}
           {% if site.jsonresume and site.jsonresume.size > 0 %}
             {% unless site.jsonresume contains data[0] %}
@@ -77,9 +84,14 @@ layout: default
           {% endif %}
           {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
           <a class="anchor" id="{{ data[0] }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
-            <div>
+          <div class="cv-section-card">
+            <div class="cv-section-header">
+              <h3 class="cv-section-title">
+                <i class="cv-section-icon {% if data[0] == 'basics' %}fas fa-user{% elsif data[0] == 'education' %}fas fa-graduation-cap{% elsif data[0] == 'work' %}fas fa-briefcase{% elsif data[0] == 'publications' %}fas fa-file-alt{% elsif data[0] == 'awards' %}fas fa-trophy{% elsif data[0] == 'skills' %}fas fa-code{% elsif data[0] == 'volunteer' %}fas fa-hands-helping{% elsif data[0] == 'projects' %}fas fa-project-diagram{% else %}fas fa-circle{% endif %}"></i>
+                {{ data[0] | capitalize }}
+              </h3>
+            </div>
+            <div class="cv-section-content">
               {% case data[0] %}
                 {% when 'basics' %}
                   {% include resume/basics.liquid %}
@@ -115,3 +127,785 @@ layout: default
     </article>
   </div>
 {% endunless %}
+
+<style>
+/* Modern CV Styling */
+.cv-modern {
+  margin-top: 2rem;
+}
+
+.cv-pdf-link {
+  color: var(--global-theme-color) !important;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cv-pdf-link:hover {
+  background-color: var(--global-theme-color);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cv-section-card {
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cv-section-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  border-color: var(--global-theme-color);
+}
+
+.cv-section-header {
+  background: linear-gradient(135deg, var(--global-theme-color), #667eea);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-section-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+.cv-section-card:hover .cv-section-header::before {
+  right: -30%;
+}
+
+.cv-section-title {
+  color: white;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cv-section-icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.cv-section-content {
+  padding: 2rem;
+}
+
+/* Enhanced existing CV elements */
+.cv-modern .table-cv {
+  margin-bottom: 0;
+}
+
+.cv-modern .table-cv td {
+  border: none;
+  padding: 0.75rem 1rem;
+}
+
+.cv-modern .table-cv tr:nth-child(even) {
+  background-color: var(--global-bg-color);
+}
+
+.cv-modern .institution {
+  background: linear-gradient(90deg, transparent, var(--global-bg-color), transparent);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-left: 4px solid var(--global-theme-color);
+}
+
+.cv-modern .btncv {
+  background-color: var(--global-theme-color);
+  color: white !important;
+  border: none !important;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cv-modern .btncv:hover {
+  background-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Map items styling */
+.cv-modern .container-pdf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cv-modern .container-pdf > div {
+  background-color: var(--global-bg-color);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--global-theme-color);
+}
+
+/* List groups styling */
+.cv-modern .list-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.cv-modern .list-group {
+  background-color: var(--global-bg-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--global-divider-color);
+  transition: all 0.3s ease;
+}
+
+.cv-modern .list-group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: var(--global-theme-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cv-section-header {
+    padding: 1.25rem;
+  }
+  
+  .cv-section-content {
+    padding: 1.5rem;
+  }
+  
+  .cv-section-title {
+    font-size: 1.2rem;
+  }
+  
+  .cv-modern .container-pdf {
+    grid-template-columns: 1fr;
+  }
+  
+  .cv-modern .list-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode compatibility */
+html[data-theme="dark"] .cv-section-card {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+html[data-theme="dark"] .cv-section-card:hover {
+  box-shadow: 0 8px 25px rgba(255,255,255,0.1);
+}
+
+html[data-theme="dark"] .cv-modern .institution {
+  background: linear-gradient(90deg, transparent, var(--global-card-bg-color), transparent);
+}
+
+html[data-theme="dark"] .cv-modern .container-pdf > div {
+  background-color: var(--global-card-bg-color);
+}
+
+html[data-theme="dark"] .cv-modern .list-group {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+/* CV Timeline Styles (for Education/Experience) */
+.cv-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.cv-timeline-item {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.cv-timeline-content {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .cv-timeline-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+  }
+}
+
+.cv-year-badge {
+  background: linear-gradient(135deg, var(--global-theme-color), #667eea);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+  max-width: none;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+  .cv-year-badge {
+    min-width: 140px;
+    max-width: 160px;
+    width: auto;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+}
+
+.year-text {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.location-info {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  word-break: break-word;
+}
+
+.location-info i {
+  margin-right: 0.3rem;
+}
+
+.cv-details {
+  width: 100%;
+  flex: 1;
+  min-width: 0; /* Prevent flex item from overflowing */
+}
+
+@media (min-width: 768px) {
+  .cv-details {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.cv-title {
+  color: var(--global-text-color);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.cv-institution-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.institution-item,
+.department-item {
+  display: flex;
+  align-items: center;
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
+
+.institution-item i,
+.department-item i {
+  color: var(--global-theme-color);
+  margin-right: 0.5rem;
+  width: 16px;
+}
+
+.cv-main-description {
+  margin-bottom: 1rem;
+  color: var(--global-text-color-light);
+  line-height: 1.6;
+}
+
+.cv-description-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.cv-description-item {
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  position: relative;
+  color: var(--global-text-color-light);
+  line-height: 1.5;
+}
+
+.cv-description-item::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--global-theme-color);
+  font-weight: bold;
+}
+
+.cv-sub-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.cv-sub-list li {
+  margin-bottom: 0.4rem;
+  padding-left: 1rem;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.cv-sub-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--global-theme-color);
+  opacity: 0.7;
+}
+
+.cv-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.cv-link-button {
+  background-color: var(--global-theme-color);
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: none;
+  display: inline-block;
+}
+
+.cv-link-button:hover {
+  background-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: white !important;
+}
+
+/* CV List Groups Styles (for Skills) */
+.cv-list-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cv-group-section {
+  background-color: var(--global-bg-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--global-divider-color);
+  transition: all 0.3s ease;
+}
+
+.cv-group-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: var(--global-theme-color);
+}
+
+.cv-group-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--global-theme-color);
+}
+
+.cv-group-icon {
+  color: var(--global-theme-color);
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+}
+
+.cv-group-title {
+  color: var(--global-theme-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cv-group-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cv-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.75rem;
+  background-color: var(--global-card-bg-color);
+  border-radius: 8px;
+  border: 1px solid var(--global-divider-color);
+  transition: all 0.2s ease;
+}
+
+.cv-group-item:hover {
+  border-color: var(--global-theme-color);
+  transform: translateX(4px);
+}
+
+.cv-item-main {
+  flex: 1;
+}
+
+.cv-item-name {
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.cv-item-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.cv-item-level,
+.cv-item-school,
+.cv-item-time {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  background-color: var(--global-bg-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--global-divider-color);
+}
+
+.cv-item-level {
+  background: linear-gradient(45deg, var(--global-theme-color), #667eea);
+  color: white;
+  font-weight: 500;
+}
+
+.cv-item-link {
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cv-year-badge {
+    min-width: 100px;
+    max-width: 100%;
+  }
+  
+  .cv-list-groups {
+    grid-template-columns: 1fr;
+  }
+  
+  .cv-group-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .cv-item-link {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+  
+  .cv-item-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Dark mode enhancements */
+html[data-theme="dark"] .cv-group-section {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+html[data-theme="dark"] .cv-group-section:hover {
+  box-shadow: 0 6px 20px rgba(255,255,255,0.05);
+}
+
+html[data-theme="dark"] .cv-group-item {
+  background-color: var(--global-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+html[data-theme="dark"] .cv-item-level,
+html[data-theme="dark"] .cv-item-school,
+html[data-theme="dark"] .cv-item-time {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+/* CV Clean List Styles (for Languages, References, etc.) */
+.cv-clean-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cv-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--global-bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--global-divider-color);
+  transition: all 0.3s ease;
+}
+
+.cv-list-item:hover {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-theme-color);
+  transform: translateX(4px);
+}
+
+.cv-list-bullet {
+  color: var(--global-theme-color);
+  font-size: 0.4rem;
+  margin-right: 0.75rem;
+  opacity: 0.8;
+}
+
+.cv-list-content {
+  flex: 1;
+  color: var(--global-text-color);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* CV Info Grid Styles (for General Information) */
+.cv-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.cv-info-item {
+  background-color: var(--global-bg-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid var(--global-divider-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-info-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, var(--global-theme-color), #667eea);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cv-info-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: var(--global-theme-color);
+}
+
+.cv-info-item:hover::before {
+  opacity: 1;
+}
+
+.cv-info-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: var(--global-theme-color);
+  font-weight: 600;
+}
+
+.cv-info-icon {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.cv-info-value {
+  color: var(--global-text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.cv-info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* CV Nested Sections Styles (for Skills, References) */
+.cv-nested-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cv-nested-section {
+  background-color: var(--global-bg-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--global-divider-color);
+  transition: all 0.3s ease;
+}
+
+.cv-nested-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: var(--global-theme-color);
+}
+
+.cv-nested-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--global-theme-color);
+}
+
+.cv-nested-icon {
+  color: var(--global-theme-color);
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+}
+
+.cv-nested-title {
+  color: var(--global-theme-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cv-nested-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cv-nested-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+}
+
+.cv-nested-item:hover {
+  transform: translateX(4px);
+}
+
+.cv-nested-bullet {
+  color: var(--global-theme-color);
+  font-size: 0.8rem;
+  margin-right: 0.75rem;
+  margin-top: 0.1rem;
+  opacity: 0.7;
+}
+
+.cv-nested-content {
+  flex: 1;
+  color: var(--global-text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Enhanced responsive design for all CV components */
+@media (max-width: 768px) {
+  .cv-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cv-info-item,
+  .cv-nested-section {
+    padding: 1rem;
+  }
+  
+  .cv-list-item {
+    padding: 0.6rem 0.75rem;
+  }
+  
+  .cv-nested-header {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Dark mode compatibility for new components */
+html[data-theme="dark"] .cv-list-item {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+html[data-theme="dark"] .cv-list-item:hover {
+  background-color: var(--global-bg-color);
+  box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+html[data-theme="dark"] .cv-info-item {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+html[data-theme="dark"] .cv-info-item:hover {
+  box-shadow: 0 6px 20px rgba(255,255,255,0.05);
+}
+
+html[data-theme="dark"] .cv-nested-section {
+  background-color: var(--global-card-bg-color);
+  border-color: var(--global-divider-color);
+}
+
+html[data-theme="dark"] .cv-nested-section:hover {
+  box-shadow: 0 6px 20px rgba(255,255,255,0.05);
+}
+</style>

@@ -1,51 +1,44 @@
-<div class="list-groups">
+<div class="cv-list-groups">
   {% for content in entry.contents %}
-    <div class="list-group col-md-6">
-      <table class="table-cv list-group-table">
-        <tbody>
-          <tr>
-            {% if content.icon %}
-              <td class="list-group-category-icon"><i class="{{ content.icon }}"></i></td>
-            {% else %}
-              <td class="list-group-category-icon"></td>
+    <div class="cv-group-section">
+      <div class="cv-group-header">
+        {% if content.icon %}
+          <i class="cv-group-icon {{ content.icon }}"></i>
+        {% endif %}
+        <h4 class="cv-group-title">{{ content.category }}</h4>
+      </div>
+      
+      <div class="cv-group-items">
+        {% for item in content.items %}
+          <div class="cv-group-item">
+            <div class="cv-item-main">
+              <div class="cv-item-name">{{ item.name }}</div>
+              
+              <div class="cv-item-details">
+                {% if item.level %}
+                  <span class="cv-item-level">{{ item.level }}</span>
+                {% endif %}
+                
+                {% if item.school %}
+                  <span class="cv-item-school">{{ item.school }}</span>
+                {% endif %}
+                
+                {% if item.time %}
+                  <span class="cv-item-time">{{ item.time }}</span>
+                {% endif %}
+              </div>
+            </div>
+            
+            {% if item.link %}
+              <div class="cv-item-link">
+                <a href="{{ item.link }}" target="_blank" class="cv-link-button">
+                  {% if item.linkname %}{{ item.linkname }}{% else %}Document{% endif %}
+                </a>
+              </div>
             {% endif %}
-            <!-- Calculate colspan number for category title -->
-            {% assign i = 1 %}
-            {% for item in content.items %}
-              {% assign i = i | plus: 1 %}
-            {% endfor %}
-            <td colspan="{{ i }}" class="list-group-category">{{ content.category }}</td>
-          </tr>
-          {% for item in content.items %}
-            <tr>
-              <td></td>
-              <td class="list-group-name">
-                <b>{{ item.name }}</b>
-              </td>
-              {% if item.level %}
-                <td class="list-group-level">{{ item.level }}</td>
-              {% endif %}
-              {% if item.school %}
-                <td class="list-group-school">{{ item.school }}
-              {% endif %}
-              {% if item.time %}
-                <br>
-                <span class="list-group-time">{{ item.time }}</span>
-                </td>
-              {% else %}
-                </td>
-              {% endif %}
-              {% if item.link %}
-                <td class="list-group-link">
-                  <a href="{{ item.link }}" target="_blank" class="btncv z-depth-0">
-                    {% if item.linkname %}{{ item.linkname }}{% else %}DOC{% endif %}
-                  </a>
-                </td>
-              {% endif %}
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   {% endfor %}
 </div>

@@ -1,118 +1,96 @@
-<ul class="card-text font-weight-light list-group list-group-flush">
+<div class="cv-timeline">
   {% for content in entry.contents %}
-    <li class="list-group-item">
-      <div class="row">
+    <div class="cv-timeline-item">
+      <div class="cv-timeline-content">
         {% if content.year %}
-          <div class="col-xs-2 cl-sm-2 col-md-2 text-center" style="width: 75px">
-            <table class="table-cv">
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
-                      {{- content.year -}}
-                    </span>
-                  </td>
-                </tr>
-                {% if content.location %}
-                  <tr>
-                    <td>
-                      <p class="location">
-                        <i class="fa-solid fa-location-dot iconlocation"></i>
-                        {{ content.location }}
-                      </p>
-                    </td>
-                  </tr>
-                {% endif %}
-              </tbody>
-            </table>
+          <div class="cv-year-badge">
+            <span class="year-text">{{ content.year }}</span>
+            {% if content.location %}
+              <div class="location-info">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>{{ content.location }}</span>
+              </div>
+            {% endif %}
           </div>
         {% endif %}
-        <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
+        
+        <div class="cv-details">
           {% if content.title %}
-            <h6 class="title font-weight-bold ml-1 ml-md-4">{{ content.title }}</h6>
+            <h5 class="cv-title">{{ content.title }}</h5>
           {% endif %}
-          {% if content.department or content.institution %}
-            <table class="table-cv ml-1 ml-md-4 institution">
-              <tbody>
-                {% if content.institution %}
-                  <tr>
-                    <td style="vertical-align: top; text-align: center" class="institution">
-                      <i class="fa-solid fa-building-columns iconinstitution"></i>
-                    </td>
-                    <td class="institution">{{ content.institution }}</td>
-                  </tr>
-                {% endif %}
-                {% if content.department %}
-                  <tr>
-                    <td style="vertical-align: top; text-align: center" class="department">
-                      <i class="fa-regular fa-circle-dot icondepartment"></i>
-                    </td>
-                    <td class="department">{{ content.department }}</td>
-                  </tr>
-                {% endif %}
-              </tbody>
-            </table>
+          
+          {% if content.institution or content.department %}
+            <div class="cv-institution-info">
+              {% if content.institution %}
+                <div class="institution-item">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <span>{{ content.institution }}</span>
+                </div>
+              {% endif %}
+              {% if content.department %}
+                <div class="department-item">
+                  <i class="fa-regular fa-circle-dot"></i>
+                  <span>{{ content.department }}</span>
+                </div>
+              {% endif %}
+            </div>
           {% endif %}
+          
           {% if content.maindescription %}
-            <div class="ml-1 ml-md-4">{{ content.maindescription }}</div>
+            <div class="cv-main-description">{{ content.maindescription }}</div>
           {% endif %}
+          
           {% if content.description %}
-            <ul class="items">
+            <ul class="cv-description-list">
               {% for item in content.description %}
-                <li>
+                <li class="cv-description-item">
                   {% if item.contents %}
-                    <span class="item-title">{{ item.title }}</span>
-                    <ul class="subitems">
+                    <strong>{{ item.title }}</strong>
+                    <ul class="cv-sub-list">
                       {% for subitem in item.contents %}
-                        <li>
-                          <span class="subitem">{{ subitem }}</span>
-                        </li>
+                        <li>{{ subitem }}</li>
                       {% endfor %}
                     </ul>
                   {% else %}
-                    <span class="item">{{ item }}</span>
+                    {{ item }}
                   {% endif %}
                 </li>
               {% endfor %}
             </ul>
           {% endif %}
+          
           {% if content.items %}
-            <ul class="items">
+            <ul class="cv-description-list">
               {% for item in content.items %}
-                <li>
+                <li class="cv-description-item">
                   {% if item.contents %}
-                    <span class="item-title">{{ item.title }}</span>
-                    <ul class="subitems">
+                    <strong>{{ item.title }}</strong>
+                    <ul class="cv-sub-list">
                       {% for subitem in item.contents %}
-                        <li>
-                          <span class="subitem">{{ subitem }}</span>
-                        </li>
+                        <li>{{ subitem }}</li>
                       {% endfor %}
                     </ul>
                   {% else %}
-                    <span class="item">{{ item }}</span>
+                    {{ item }}
                   {% endif %}
                 </li>
               {% endfor %}
             </ul>
           {% endif %}
+          
           {% if content.linkitems %}
-            <div class="container-links ml-1 ml-md-4">
+            <div class="cv-links">
               {% for item in content.linkitems %}
                 {% if item.link %}
-                  <div class="container-link-button">
-                    {% if item.linkname %}
-                      <a href="{{ item.link }}" target="_blank" class="btncv z-depth-0">{{ item.linkname }}</a>
-                    {% else %}
-                      <a href="{{ item.link }}" target="_blank" class="btncv z-depth-0">doc</a>
-                    {% endif %}
-                  </div>
+                  <a href="{{ item.link }}" target="_blank" class="cv-link-button">
+                    {% if item.linkname %}{{ item.linkname }}{% else %}Document{% endif %}
+                  </a>
                 {% endif %}
               {% endfor %}
             </div>
           {% endif %}
         </div>
       </div>
-    </li>
+    </div>
   {% endfor %}
-</ul>
+</div>
